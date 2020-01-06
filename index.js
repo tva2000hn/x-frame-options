@@ -9,6 +9,7 @@ const port = process.env.PORT || 3000;
 const router = express.Router();
 
 app.use(morgan('tiny'));
+app.use(router);
 
 const regex = /\s+(href|src)=['"](.*?)['"]/g;
 
@@ -20,7 +21,7 @@ const getMimeType = url => {
     return mime.getType(url) || 'text/html'; // if there is no extension return as html
 };
 
-app.get('/reader', (req, res) => {
+router.get('/reader', (req, res) => {
     res.sendFile(path.join(__dirname+'/a.html'));
 });
     
