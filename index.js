@@ -6,6 +6,7 @@ const { URL } = require('url');
 
 const app = express();
 const port = process.env.PORT || 3000;
+const router = express.Router();
 
 app.use(morgan('tiny'));
 
@@ -18,6 +19,10 @@ const getMimeType = url => {
     if(mime.getType(url) === 'application/x-msdownload') return 'text/html';
     return mime.getType(url) || 'text/html'; // if there is no extension return as html
 };
+
+router.get('/reader',function(req,res){
+  res.sendFile(path.join(__dirname+'/a.html'));
+});
 
 app.get('/', (req, res) => {
     const { url } = req.query; // get url parameter
