@@ -21,7 +21,7 @@ const getMimeType = url => {
 };
 
 app.get('/reader', (req, res) => {
-    res.sendFile('a.html');
+    res.sendFile(path.join(__dirname+'/a.html'));
 });
     
 
