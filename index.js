@@ -20,9 +20,12 @@ const getMimeType = url => {
     return mime.getType(url) || 'text/html'; // if there is no extension return as html
 };
 
-router.get('/reader',function(req,res){
-  res.sendFile(path.join(__dirname+'/a.html'));
-});
+app.get('/reader', (req, res) => {
+    const { url } = req.query; // get url parameter
+    if(!url) {
+        res.type('text/html');
+        return res.end("You need to specify <code>url</code> query parameter");
+    });
 
 app.get('/', (req, res) => {
     const { url } = req.query; // get url parameter
