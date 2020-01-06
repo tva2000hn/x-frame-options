@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="X-Frame-Bypass: Web Component extending IFrame to bypass X-Frame-Options: deny/sameorigin">
+	<title>X-Frame-Bypass Web Component Demo</title>
+	<style>
+		html, body {
+			margin: 0;
+			padding: 0;
+			height: 100%;
+			overflow: hidden;
+		}
+		iframe {
+			display: block;
+			width: 80%;
+			height: 100%;
+			
+		}
+		img {
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+		.but {
+			  display: block;
+			  height: 100%;
+			  width:19.5%;
+			  border: none;
+			  background-color: #4CAF50;
+			  padding: 14px 28px;
+			  font-size: 16px;
+			  cursor: pointer;
+			  text-align: center;
+		}
+		#outer
+		{
+				width:100%;
+				text-align: center;
+		}
+		.inner
+		{
+			display: inline-block;
+		}
+		.btn-group{
+		height : 33%
+		}
+		.btn-group button {
+		  background-color: #4CAF50; /* Green background */
+		  border: 1px solid green; /* Green border */
+		  color: white; /* White text */
+		  padding: 10px 24px; /* Some padding */
+		  cursor: pointer; /* Pointer/hand icon */
+		  height: 100%; /* Set a width if needed */
+		  width: 19.5%;
+		  display: block; /* Make the buttons appear below each other */
+		}
+
+		.btn-group button:not(:last-child) {
+		  border-bottom: none; /* Prevent double borders */
+		}
+
+		/* Add a background color on hover */
+		.btn-group button:hover {
+		  background-color: #3e8e41;
+		}
+	</style>
+	<script>
+	function myFunction() {
+	  var currentUrl = document.getElementById("if").src;
+	  console.log(currentUrl);
+	}
+	</script>
+</head>
+<body>
+	<iframe id="if" src="http://lolitest.herokuapp.com/?url=https://nhentai.net/" align="right"></iframe>	
+	<div class="btn-group">
+	  <button onclick="myFunction()">Apple</button>
+	  <button>Samsung</button>
+	  <button>Sony</button>
+</div>
+
+</body>
+</html>
