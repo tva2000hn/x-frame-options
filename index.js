@@ -20,7 +20,9 @@ const getMimeType = url => {
     return mime.getType(url) || 'text/html'; // if there is no extension return as html
 };
 
-app.get('/reader', (req, res) => {});
+app.get('/reader', (req, res) => {
+    res.sendFile('a.html');
+});
     
 
 app.get('/', (req, res) => {
