@@ -9,7 +9,7 @@ const port = process.env.PORT || 3000;
 const router = express.Router();
 
 app.use(morgan('tiny'));
-app.use(router);
+app.use('/', router);
 
 const regex = /\s+(href|src)=['"](.*?)['"]/g;
 
